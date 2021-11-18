@@ -8,26 +8,53 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name=("products"))
+@Table(name=("reservas"))
 public class Product {
 	@Id
-	@Column(name="id")
+	@Column(name="NumReserva")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private long NumResreva;
 	
-	@Column(name="nombre", nullable=false, length=30 )
-	private String nombre;
+	@Column(name="NomTitular", nullable=false, length=30 )
+	private String NomTitular;
 	
-	public long getId() {
-		return id;
+	@Column(name="Ubicacion_silla", nullable=false, length=30 )
+	private String Ubicacion_silla;
+	
+	@Column(name="Pagado", nullable=false, length=30 )
+	private String Pagado;
+
+	public long getNumResreva() {
+		return NumResreva;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+	public void setNumResreva(long numResreva) {
+		NumResreva = numResreva;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public String getNomTitular() {
+		return NomTitular;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}	
+
+	public void setNomTitular(String nomTitular) {
+		NomTitular = nomTitular;
+	}
+
+	public String getUbicacion_silla() {
+		return Ubicacion_silla;
+	}
+
+	public void setUbicacion_silla(String ubicacion_silla) {
+		Ubicacion_silla = ubicacion_silla;
+	}
+
+	public String getPagado() {
+		return Pagado;
+	}
+
+	public void setPagado(String pagado) {
+		Pagado = pagado;
+	}
+	
+	
 }
